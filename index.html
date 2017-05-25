@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Secure Cloud-Native Applications</title>
-        <meta name="description" content="Secure Cloud-Native Applications">
+		<title>Cloud-Native Security</title>
+        <meta name="description" content="Cloud-Native Security">
         <meta name="author" content="Andreas Falk">
 
         <link rel="stylesheet" href="css/reveal.css">
@@ -33,7 +33,7 @@
                 <!-- Introduction -->
 
 				<section data-background="images/cloud.jpg">
-                    <h2>Secure Cloud-Native Applications</h2>
+                    <h2>Cloud-Native Security</h2>
                     <h4>Andreas Falk</h4>
                 </section>
 				<section>
@@ -54,25 +54,17 @@
                     <section data-background="images/dildo_camera.png" data-background-size="90%">
                     </section>
                     <section data-background="images/shodan.png" data-background-size="98%">
+                        <h1><a style="color: white" href="https://shodan.io">shodan.io</a></h1>
                     </section>
                     <section>
-                        <h2>WannaCrypt</h2>
+                        <h2>WannaCry (WannaCrypt)</h2>
                         <img src="images/wannacrypt.jpg" width="75%" class="plain">
                     </section>
                     <section data-background="images/rot13_encryption.png" data-background-size="98%">
                         <h2>stackoverflow.com</h2>
                     </section>
-
                 </section>
                 <section>
-                    <section>
-                        <h1>Architecture / Threat Model</h1>
-                    </section>
-                    <section data-background="images/threat_model.png" data-background-size="90%">
-                        <aside class="notes">
-                            This slide has fragments which are also stepped through in the notes window.
-                        </aside>
-                    </section>
                     <section tagcloud>
                         SQLInjection
                         CSRF
@@ -134,11 +126,31 @@
                                 OWASP_Proactive_Controls</a></small>
                         </div>
                     </section>
+                    <section>
+                        <h1>Cloud-Native Security?</h1>
+                    </section>
+                    <section>
+                        <h1>Architecture / Threat Model</h1>
+                    </section>
+                    <section data-background="images/threat_model.png" data-background-size="90%">
+                        <aside class="notes">
+                            This slide has fragments which are also stepped through in the notes window.
+                        </aside>
+                    </section>
                 </section>
 
-                <!-- ANGULAR -->
+                <!-- Client Side: For example ANGULAR -->
 
                 <section>
+                    <section>
+                        <h2>Client Side Security (Frontend)</h2>
+                        <img src="images/clientside_frameworks.png" class="plain">
+                    </section>
+                    <section>
+                        <h4>A3: Cross-Site Scripting (XSS)</h4>
+                        <h4>A8: Cross-Site Request Forgery (CSRF)</h4>
+                        <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
+                    </section>
                     <section>
                         <h1>Angular</h1>
                         <img src="images/angular2-logo.png">
@@ -149,24 +161,22 @@
                         <img src="images/angular2-logo.png">
                     </section>
                     <section>
-                        <h3>A3: Cross-Site Scripting (XSS)</h3>
-                        <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
-                    </section>
-                    <section>
                         <h2>Angular JS Security</h2>
                         <img src="images/angular1_tweet.png" width="1000px" height="250px">
                         <small><a href="https://angularjs.blogspot.de/2016/09/angular-16-expression-sandbox-removal.html">
                             https://angularjs.blogspot.de/2016/09/angular-16-expression-sandbox-removal.html</a></small>
                     </section>
                     <section>
-                        <h2>Angular Security</h2>
-                        <blockquote cite="https://github.com/angular/angular/issues/8511">
-                            &ldquo;...The basic idea is to implement automatic, secure escaping for all values that can reach
-                            the DOM...
-                            By default, with no specific action for developers, Angular apps must be secure...&rdquo;
-                        </blockquote>
+                        <h1>Angular Security</h1>
+                        <p>
+                            &ldquo;...The basic idea is to implement <strong>automatic secure escaping</strong> for all values that can reach
+                            the DOM...<br>
+                        <strong>By default</strong>, with no specific action for developers, <strong>Angular apps must be secure</strong>...&rdquo;
+                        </p>
+                        <p>
                         <small><a href="https://github.com/angular/angular/issues/8511">
                             https://github.com/angular/angular/issues/8511</a></small>
+                        </p>
                         <aside class="notes">
                             Angular version aktuell halten. Security-Updates.
                             Keine Änderungen am Angular Framework Code.
@@ -227,50 +237,53 @@
 
                 <section>
                     <section>
-                        <h1>Backend</h1>
+                        <h2>Server Side Security (Backend)</h2>
+                        <img src="images/serverside_java.png" class="plain">
+                    </section>
+                    <section>
+                        <h1>Java EE?</h1>
+                        <img src="images/java_ee_logo_big.png" class="plain" width="30%">
+                        <p class="fragment">Java EE 8 (End of 2017): <br>Security 1.0, CDI 2.0, JSON-B, Servlet 4.0, HTTP/2</p>
+                        <p class="fragment">Java EE 9 (2018/2019): <br>Cloud Ready (Serverless, NoSQL, Monitoring, ...)</p>
+                    </section>
+                    <section>
+                        <h1>Java EE 8</h1>
+                        <h3>Java EE Security API 1.0 (JSR 375)</h3>
+                        <ul>
+                            <li>Authentication/Authorization APIs</li>
+                            <li>OAuth, OpenID support</li>
+                            <li>Secret Management</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>"Optimizing Enterprise Java for a microservices architecture"</h3>
+                        <img src="images/microprofile.png" class="plain">
+                        <p>
+                            <small>
+                                <a href="https://microprofile.io/">https://microprofile.io/</a>
+                            </small>
+                        </p>
+                    </section>
+                    <section>
+                        <h1>Spring Platform</h1>
+                        <img src="images/spring-logo.png" class="plain">
+                    </section>
+                    <section>
+                        <h2>Spring Boot Backend Microservice</h2>
                         <img src="images/spring_stack.jpg" width="40%" height="40%">
                     </section>
                     <section>
-                        <h3>A1: Injection</h3>
-                        <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
+                        <h1>Spring Platform</h1>
+                        <p class="fragment">Spring Framework 5.0 GA (July 2017)</p>
+                        <p class="fragment">Spring Security 5.0 GA (November 2017)</p>
+                        <p class="fragment">Spring Boot 2.0 GA (November 2017)</p>
+                        <p class="fragment">Spring Cloud <em>Finchley</em> (November/December 2017)</p>
                     </section>
                     <section>
-                        <h2>Persistent XSS + Injections</h2>
-                        <h4>Strong Typing + Bean Validation</h4>
-                        <pre><code class="java" data-trim contenteditable>
-                            @Entity
-                            public class Person extends AbstractPersistable&lt;Long&gt; {
-
-                               @NotNull
-                               @Pattern(regexp = "^[A-Za-z0-9- ]{1,30}$")
-                               private String lastName;
-
-                               @NotNull
-                               @Enumerated(EnumType.STRING)
-                               private GenderEnum gender;
-                               ...
-                            }
-                         </code></pre>
-                    </section>
-                    <section>
-                        <h2>SQL Injections</h2>
-                        <h4>Spring Data JPA: Use Prepared Statements</h4>
-                        <pre><code class="java" data-trim contenteditable>
-                            @Query(
-                            "select u from User u where u.username = "
-                            + " :username and u.password = :password")
-                            User findByUsernameAndPassword(
-                                 @Param("username") String username,
-                                 @Param("password") String password);
-                        </code></pre>
-                    </section>
-                    <section>
-                        <h4>A8: Cross-Site Request Forgery (CSRF)</h4>
-                        <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
-                    </section>
-                    <section>
-                        <h2>Double Submit CSRF Token</h2>
-                        <img src="images/csrf.jpg">
+                        <h1>Spring Security 5.0</h1>
+                        <p class="fragment">Support for Reactive Web Applications</p>
+                        <p class="fragment">Support for OAuth 2.0</p>
+                        <p class="fragment">Support for OpenID Connect 1.0, JWT and JOSE (JWS/JWE/JWK)</p>
                     </section>
                     <section>
                         <h1>Spring Security</h1>
@@ -282,29 +295,91 @@
                         <p class="fragment">Security Response Header</p>
                     </section>
                     <section>
-                        <h3>Spring Security CSRF Configuration</h3>
-                        <h4>Angular Support</h4>
-                        <pre><code class="java" data-trim contenteditable>
-                            @Configuration
-                            public class WebSecurityConfiguration
-                                extends WebSecurityConfigurerAdapter {
-
-                                @Override
-                                protected void configure(HttpSecurity http)
-                                    throws Exception {
-                                    …
-                                    http
-                                       .csrf().csrfTokenRepository(
-                                          CookieCsrfTokenRepository.withHttpOnlyFalse()
-                                       );
-                            }
-                        </code></pre>
+                        <h1>Authentication</h1>
+                        <h2>Who am I?</h2>
+                        <img src="images/detective.png" class="plain" width="30%">
+                        <h3>HTTP 401 - Unauthorized</h3>
                     </section>
                     <section>
-                        <h1>Who am I?</h1>
+                        <h2>Authentication</h2>
                         <h4>A2: Broken Authentication and Session Management</h4>
                         <h4>A10: Underprotected APIs</h4>
                         <img src="images/owasp_top_10_2017.png" width="20%" height="20%">
+                    </section>
+                    <section>
+                        <h2>Basic Authentication</h2>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                        </code></pre>
+                        <pre><code class="http" data-trim>
+                            HTTP/1.1 401
+                            WWW-Authenticate: Basic realm="hello"
+                        </code></pre>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                            Authorization: Basic dXNlcjpzZWNyZXQ=
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Form Based Login</h2>
+                        <pre><code class="http" data-trim>
+                            POST /login HTTP/1.1
+                            Host: localhost:8080
+                            Content-Type: application/x-www-form-urlencoded
+                            Cookie: JSESSIONID=14965E3A995DA1973F42F308D59727D4
+
+                            username=user&password=secret&submit=Login
+                        </code></pre>
+                        <pre><code class="http" data-trim>
+                            HTTP/1.1 302
+                            Set-Cookie: JSESSIONID=49C632387800316021BE804AB2F27C15;
+                                            Path=/; HttpOnly
+                        </code></pre>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                            Cookie: JSESSIONID=49C632387800316021BE804AB2F27C15
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Digest Authentication</h2>
+                        <pre><code class="http" data-trim>
+                            HTTP/1.1 401
+                            WWW-Authenticate: Digest realm="Hello", qop="auth",
+                                nonce="MTQ5NTczNzY5NDkzNTpiZmM1MTk4ZTZjMmFlNTk3OTIy...",
+                                stale="true"
+                        </code></pre>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                            Authorization: Digest username="user", realm="Hello",
+                                nonce="MTQ5NTczNzY5NDkzNTpiZmM1MTk4ZTZjMmFlNTk3OTIyM...",
+                                uri="/", response="e94ed21db74add38cb80a7e3758519e6",
+                                qop=auth, nc=00000001, cnonce="75467274b8e8bd72"
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Bearer Token</h2>
+                        <ul>
+                            <li>OAuth2</li>
+                            <li>OpenID Connect</li>
+                        </ul>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                            Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiI
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Other Authentication Mechanisms</h2>
+                        <ul>
+                            <li>X.509 Client Certificate</li>
+                            <li>SAML 2</li>
+                            <li>API Token</li>
+                            <li>...</li>
+                        </ul>
                     </section>
                     <section>
                         <h2>Authentication</h2>
@@ -338,11 +413,172 @@
                     </section>
                     <section>
                         <h3>OAuth 2 = Authorization</h3>
-                        <img src="images/authserver.jpg">
+                        <img src="images/oauth_roles.png" class="plain">
+                        <br>
+                        <small>
+                            <a href="https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h1>OAuth2</h1>
+                        <h3>Grant Types</h3>
+                        <ul>
+                            <li>Authorization Code Grant</li>
+                            <li>Implicit Grant</li>
+                            <li>Client Credentials Grant</li>
+                            <li>Resource Owner Password Credentials Grant</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Authorization Code Grant</h2>
+                        <img src="images/serverside_frameworks.png" class="plain">
+                    </section>
+                    <section>
+                        <h2>Implicit Grant</h2>
+                        <img src="images/clientside_frameworks.png" class="plain">
+                    </section>
+                    <section>
+                        <h2>Client Credentials Grant</h2>
+                        <img src="images/backend_communication.png" class="plain">
+                    </section>
+                    <section>
+                        <h2>Resource Owner Password Credentials Grant</h2>
+                        <pre><code class="http" data-trim>
+                            POST /token
+                            Host: localhost:9090
+                            Accept: application/json
+                            Content-type: application/x-www-form-encoded
+                            Authorization: Basic b2F1dGgtY2xpZW50LTE6b2F1dGgt...
+                            grant_type=password&scope=openid&username=adm&password=secret
+                        </code></pre>
+                        <h2 style="color: red" class="fragment fade-up">Do NOT use!</h2>
+                    </section>
+                    <section>
+                        <h2>Token Representations</h2>
+                        <ul>
+                            <li><strong>Handle:</strong> Reference to token contents</li>
+                            <li><strong>Assertion:</strong> Self-contained token</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Token Usages</h2>
+                        <ul>
+                            <li><strong>Bearer Token:</strong> May be used by any client (RFC 6750)</li>
+                            <li><strong>Proof Token:</strong> Bound to specific client (OAuth-HTTP-MAC)</li>
+                        </ul>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                            Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiI
+                        </code></pre>
                     </section>
                     <section>
                         <h3>OpenID Connect = Authenticaton</h3>
-                        <img src="images/identityserver.jpg">
+                        <img src="images/openid_roles.png" class="plain">
+                        <br>
+                        <small>
+                            <a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h3>OpenID Connect Components</h3>
+                        <img src="images/openid_connect_standards.png" class="plain">
+                    </section>
+                    <section>
+                        <h1>OpenID Connect</h1>
+                        <h3>Authentication Flows</h3>
+                        <ul>
+                            <li>Authorization Code Flow</li>
+                            <li>Implicit Flow</li>
+                            <li>Hybrid Flow</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>JSON Web token (JWT)</h3>
+                        <h4>Base 64 Encoded JSON Formatted Value of...</h4>
+                        <p class="fragment">...Header</p>
+                        <p class="fragment">...Payload</p>
+                        <p class="fragment">...Signature</p>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                            Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1N...
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>JSON Web Token (JWT)</h3>
+                        <p>Header</p>
+                        <pre><code class="json" data-trim>
+                            {
+                              typ: "JWT",
+                              alg: "RS256"
+                            }
+                        </code></pre>
+                        <p>Payload</p>
+                        <pre><code class="json" data-trim>
+                            {
+                              iss: "https://identity.example.com",
+                              aud: "my-client-id",
+                              exp: 1495782385,
+                              nonce: "N0.46824857243233511495739124749",
+                              iat: 1495739185,
+                              at_hash: "hC1NDSB8WZ9SnjXTid175A",
+                              sub: "mysubject",
+                              auth_time: 1495739185,
+                              email: "test@gmail.com"
+                            }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1>Token Validation</h1>
+                        <span class="fragment">Validate...</span>
+                        <p class="fragment">...(iss) issuer identifier = identity server</p>
+                        <p class="fragment">...(aud) audiance = client id</p>
+                        <p class="fragment">...(exp) expiration time >= current time</p>
+                        <p class="fragment">...signature = valid for public key</p>
+                        <small>
+                            <a href="https://openid.net/specs/openid-connect-implicit-1_0.html">Implicit Client Implementer’s Guide</a><br>
+                            <a href="https://tools.ietf.org/html/rfc6819">OAuth 2.0 Threat Model and Security Considerations</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Implementations</h2>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>OAuth2</th>
+                                <th>OpenID Connect</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href="https://www.okta.com/products/single-sign-on">Okta (Cloud Service)</a></td>
+                                <td>Y</td>
+                                <td>Y</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://github.com/IdentityServer/IdentityServer3">IdentityServer 4 <br>(ASP.NET Core)</a></td>
+                                <td>Y</td>
+                                <td>Y</td>
+                            </tr>
+                            <tr>
+                                <td><a href="http://www.keycloak.org">RedHat Keycloak</a></td>
+                                <td>Y</td>
+                                <td>Y</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://projects.spring.io/spring-security-oauth">Spring Security OAuth</a></td>
+                                <td>Y</td>
+                                <td>N (partly support)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h1>Spring Security OAuth</h1>
+                        <p class="fragment">Support for OAuth 1 and OAuth2</p>
+                        <p class="fragment">Supports JSON Web Tokens (JWT)</p>
                     </section>
                     <section>
                         <h3>OAuth 2 / OpenId Connect Resource</h3>
@@ -368,36 +604,13 @@
                         </small>
                     </section>
                     <section>
-                        <h2>Implicit Grant</h2>
-                        <img src="images/angular2-logo.png" class="plain" width="15%">
-                        <span class="fragment">Validate...</span>
-                        <p class="fragment">...issuer identifier</p>
-                        <p class="fragment">...audiance (client id)</p>
-                        <p class="fragment">...signature (public key)</p>
-                        <p class="fragment">...expiration time</p>
-                        <small>
-                            <a href="https://openid.net/specs/openid-connect-implicit-1_0.html">Implicit Client Implementer’s Guide</a><br>
-                            <a href="https://tools.ietf.org/html/rfc6819">OAuth 2.0 Threat Model and Security Considerations</a>
-                        </small>
+                        <h1>Authorization</h1>
+                        <h2>What can I access?</h2>
+                        <img src="images/tampons.jpg" class="plain" width="45%">
+                        <h3>HTTP 403 - Forbidden</h3>
                     </section>
                     <section>
-                        <h2>Client Credentials Grant</h2>
-                        <img src="images/backend_communication.png">
-                    </section>
-                    <section>
-                        <h2>Resource Owner Grant</h2>
-                        <pre><code class="http" data-trim>
-                            POST /token
-                            Host: localhost:9090
-                            Accept: application/json
-                            Content-type: application/x-www-form-encoded
-                            Authorization: Basic b2F1dGgtY2xpZW50LTE6b2F1dGgt...
-                            grant_type=password&scope=openid&username=adm&password=secret
-                        </code></pre>
-                        <h2 style="color: red" class="fragment fade-up">Do NOT use!</h2>
-                    </section>
-                    <section>
-                        <h1>What can I access?</h1>
+                        <h1>Authorization</h1>
                         <h4>A4: Broken Access Control</h4>
                         <h4>A10: Underprotected APIs</h4>
                         <img src="images/owasp_top_10_2017.png" width="20%" height="20%">
@@ -445,6 +658,67 @@
                     </section>
                     <section data-background="images/demo.jpg" data-background-size="100%">
                         <h1>Demo</h1>
+                    </section>
+                    <section>
+                        <h3>A1: Injection</h3>
+                        <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
+                    </section>
+                    <section>
+                        <h2>Persistent XSS + Injections</h2>
+                        <h4>Strong Typing + Bean Validation</h4>
+                        <pre><code class="java" data-trim contenteditable>
+                            @Entity
+                            public class Person extends AbstractPersistable&lt;Long&gt; {
+
+                               @NotNull
+                               @Pattern(regexp = "^[A-Za-z0-9- ]{1,30}$")
+                               private String lastName;
+
+                               @NotNull
+                               @Enumerated(EnumType.STRING)
+                               private GenderEnum gender;
+                               ...
+                            }
+                         </code></pre>
+                    </section>
+                    <section>
+                        <h2>SQL Injections</h2>
+                        <h4>Spring Data JPA: Use Prepared Statements</h4>
+                        <pre><code class="java" data-trim contenteditable>
+                            @Query(
+                            "select u from User u where u.username = "
+                            + " :username and u.password = :password")
+                            User findByUsernameAndPassword(
+                                 @Param("username") String username,
+                                 @Param("password") String password);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h4>A8: Cross-Site Request Forgery (CSRF)</h4>
+                        <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
+                    </section>
+                    <section>
+                        <h2>Double Submit CSRF Token</h2>
+                        <img src="images/csrf.jpg">
+                    </section>
+                    <section>
+                        <h3>Spring Security CSRF Configuration</h3>
+                        <h4>Angular Support</h4>
+                        <pre><code class="java" data-trim contenteditable>
+                            @Configuration
+                            public class WebSecurityConfiguration
+                                extends WebSecurityConfigurerAdapter {
+
+                                @Override
+                                protected void configure(HttpSecurity http)
+                                    throws Exception {
+                                    …
+                                    http
+                                       .csrf().csrfTokenRepository(
+                                          CookieCsrfTokenRepository.withHttpOnlyFalse()
+                                       );
+                            }
+                        </code></pre>
                     </section>
                 </section>
                 <section>
