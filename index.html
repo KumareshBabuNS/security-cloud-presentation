@@ -53,8 +53,17 @@
                     </section>
                     <section data-background="images/dildo_camera.png" data-background-size="90%">
                     </section>
+                    <section data-background="images/tv_hack.png" data-background-size="58%">
+                    </section>
+                    <section data-background="images/kill_jeep.png" data-background-size="50%">
+                    </section>
+                    <section data-background="images/password_not_unique.jpg" data-background-size="70%">
+                    </section>
                     <section data-background="images/shodan.png" data-background-size="98%">
                         <h1><a style="color: white" href="https://shodan.io">shodan.io</a></h1>
+                    </section>
+                    <section data-background="images/haveibeenpawned.png" data-background-size="100%">
+                        <h2><a style="color: black" href="https://haveibeenpwned.com">https://haveibeenpwned.com</a></h2>
                     </section>
                     <section>
                         <h2>WannaCry (WannaCrypt)</h2>
@@ -63,8 +72,6 @@
                     <section data-background="images/rot13_encryption.png" data-background-size="98%">
                         <h2>stackoverflow.com</h2>
                     </section>
-                </section>
-                <section>
                     <section tagcloud>
                         SQLInjection
                         CSRF
@@ -90,6 +97,17 @@
                         SAML
                         SAST
                         DevSecOps
+                    </section>
+                    <section data-background="images/dices.png" data-background-size="70%">
+                    </section>
+                    <section>
+                        <h1>Open <s>Web</s> Application Security Project</h1>
+                        <img src="images/owasp_logo.jpg" class="plain">
+                        <p>
+                            <small>
+                                <a href="https://www.owasp.org">https://www.owasp.org</a>
+                            </small>
+                        </p>
                     </section>
                     <section>
                         <img src="images/owasp_top_10_2017.png" width="20%" class="plain">
@@ -129,10 +147,17 @@
                     <section>
                         <h1>Cloud-Native Security?</h1>
                     </section>
-                    <section>
-                        <h1>Architecture / Threat Model</h1>
+                    <section data-background="images/cloud_native_plattform_pure.png" data-background-size="90%">
+                        <aside class="notes">
+                            This slide has fragments which are also stepped through in the notes window.
+                        </aside>
                     </section>
-                    <section data-background="images/threat_model.png" data-background-size="90%">
+                    <section data-background="images/cloud_native_plattform_secure.png" data-background-size="90%">
+                        <aside class="notes">
+                            This slide has fragments which are also stepped through in the notes window.
+                        </aside>
+                    </section>
+                    <section data-background="images/cloud_native_plattform_neutral.png" data-background-size="90%">
                         <aside class="notes">
                             This slide has fragments which are also stepped through in the notes window.
                         </aside>
@@ -148,8 +173,37 @@
                     </section>
                     <section>
                         <h4>A3: Cross-Site Scripting (XSS)</h4>
-                        <h4>A8: Cross-Site Request Forgery (CSRF)</h4>
                         <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
+                    </section>
+                    <section>
+                        <h2>Cross-Site Scripting (XSS)</h2>
+                        <p>Injection of malicious scripts into web sites</p>
+                        <ul>
+                            <li>Reflected XSS</li>
+                            <li>Persistent XSS</li>
+                            <li>DOM Based XSS</li>
+                        </ul>
+                        <pre><code class="javascript" data-trim>
+                            &lt;script&gt;alert(123)&lt;/script&gt;
+
+                            "&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;
+                        </code></pre>
+                        <!--<script>alert('hello');</script>-->
+                    </section>
+                    <section>
+                        <h2>XSS Defenses</h2>
+                        <p>Protect Sessions (web.xml)</p>
+                        <pre><code class="xml" data-trim>
+                            &lt;session-config&gt;
+                                &lt;cookie-config&gt;
+                                    &lt;http-only&gt;true&lt;/http-only&gt;
+                                    &lt;secure&gt;true&lt;/secure&gt;
+                                &lt;/cookie-config&gt;
+                                &lt;tracking-mode&gt;COOKIE&lt;/tracking-mode&gt;
+                            &lt;/session-config&gt;
+                        </code></pre>
+                        <p>Output Escaping (Vaadin, JSF, Thymeleaf)</p>
+                        <p>Sanitizing (Angular)</p>
                     </section>
                     <section>
                         <h1>Angular</h1>
@@ -191,7 +245,7 @@
                     <section>
                         <h2>Angular Component</h2>
                         <h4>Typescript</h4>
-                        <pre><code class="typescript" data-trim contenteditable>
+                        <pre><code class="typescript" data-trim>
                             @Component({
                                 selector: 'app-root',
                                 templateUrl: 'app.component.html',
@@ -208,7 +262,7 @@
                     <section>
                         <h2>Angular Template</h2>
                         <h4>HTML Bindings</h4>
-                        <pre><code class="html" data-trim contenteditable>
+                        <pre><code class="html" data-trim>
                             <h2>Binding of potentially dangerous HTML-snippets</h2>
 
                             <h3>Encoded HTML snippet</h3>
@@ -260,13 +314,36 @@
                         <img src="images/microprofile.png" class="plain">
                         <p>
                             <small>
-                                <a href="https://microprofile.io/">https://microprofile.io/</a>
+                                <a href="https://microprofile.io">https://microprofile.io</a>
+                            </small>
+                        </p>
+                    </section>
+                    <section>
+                        <h4>Generate Java EE Application with OAuth2</h4>
+                        <img src="images/wildfly_swarm_generator.png" width="65%">
+                        <p>
+                            <small>
+                                <a href="http://wildfly-swarm.io/generator">http://wildfly-swarm.io/generator</a>
                             </small>
                         </p>
                     </section>
                     <section>
                         <h1>Spring Platform</h1>
                         <img src="images/spring-logo.png" class="plain">
+                    </section>
+                    <section data-background="images/cloud_native_plattform_spring.png" data-background-size="90%">
+                        <aside class="notes">
+                            This slide has fragments which are also stepped through in the notes window.
+                        </aside>
+                    </section>
+                    <section>
+                        <h4>Generate Spring Application with OAuth2</h4>
+                        <img src="images/start_spring_io.png">
+                        <p>
+                            <small>
+                                <a href="https://start.spring.io">https://start.spring.io</a>
+                            </small>
+                        </p>
                     </section>
                     <section>
                         <h2>Spring Boot Backend Microservice</h2>
@@ -323,6 +400,23 @@
                         </code></pre>
                     </section>
                     <section>
+                        <h2>Digest Authentication</h2>
+                        <pre><code class="http" data-trim>
+                            HTTP/1.1 401
+                            WWW-Authenticate: Digest realm="Hello", qop="auth",
+                                nonce="MTQ5NTczNzY5NDkzNTpiZmM1MTk4ZTZjMmFlNTk3OTIy...",
+                                stale="true"
+                        </code></pre>
+                        <pre><code class="http" data-trim>
+                            GET / HTTP/1.1
+                            Host: localhost:8080
+                            Authorization: Digest username="user", realm="Hello",
+                                nonce="MTQ5NTczNzY5NDkzNTpiZmM1MTk4ZTZjMmFlNTk3OTIyM...",
+                                uri="/", response="e94ed21db74add38cb80a7e3758519e6",
+                                qop=auth, nc=00000001, cnonce="75467274b8e8bd72"
+                        </code></pre>
+                    </section>
+                    <section>
                         <h2>Form Based Login</h2>
                         <pre><code class="http" data-trim>
                             POST /login HTTP/1.1
@@ -341,23 +435,6 @@
                             GET / HTTP/1.1
                             Host: localhost:8080
                             Cookie: JSESSIONID=49C632387800316021BE804AB2F27C15
-                        </code></pre>
-                    </section>
-                    <section>
-                        <h2>Digest Authentication</h2>
-                        <pre><code class="http" data-trim>
-                            HTTP/1.1 401
-                            WWW-Authenticate: Digest realm="Hello", qop="auth",
-                                nonce="MTQ5NTczNzY5NDkzNTpiZmM1MTk4ZTZjMmFlNTk3OTIy...",
-                                stale="true"
-                        </code></pre>
-                        <pre><code class="http" data-trim>
-                            GET / HTTP/1.1
-                            Host: localhost:8080
-                            Authorization: Digest username="user", realm="Hello",
-                                nonce="MTQ5NTczNzY5NDkzNTpiZmM1MTk4ZTZjMmFlNTk3OTIyM...",
-                                uri="/", response="e94ed21db74add38cb80a7e3758519e6",
-                                qop=auth, nc=00000001, cnonce="75467274b8e8bd72"
                         </code></pre>
                     </section>
                     <section>
@@ -432,6 +509,80 @@
                     <section>
                         <h2>Authorization Code Grant</h2>
                         <img src="images/serverside_frameworks.png" class="plain">
+                    </section>
+                    <section>
+                        <h2>Authorization Code Grant</h2>
+                        <p>1.Redirect to authorization endpoint <br>(Authorization Server)</p>
+                        <pre><code class="http" data-trim>
+                            HTTP/1.1 302 Moved Temporarily
+                            Location: http://localhost:9999/oauth/authorize?
+                                response_type=code&scope=read_product&client_id=myclient
+                                &redirect_uri=http%3A%2F%2Flocalhost%3A9000
+                                &state=Lwt50DDQKUB
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Authorization Code Grant</h2>
+                        <p>2.Authorization Server loads authentication form</p>
+                        <pre><code class="http" data-trim>
+                            GET /authorize?response_type=code&scope=read_product
+                                    &client_id=oauth-client-1
+                                    &redirect_uri=http%3A%2F%2Flocalhost%3A9000
+                                    &state=Lwt50DDQKUB
+                        </code></pre>
+                        <p>3.User authenticates with Authorization Server</p>
+                        <p>4.User authorizes client at Authorization Server</p>
+                    </section>
+                    <section>
+                        <h2>Authorization Code Grant</h2>
+                        <p>5.Authorization Server redirect to Client</p>
+                        <pre><code class="http" data-trim>
+                            HTTP 302 Found
+                            Location: http://localhost:9000?code=8V1pr0rJ
+                                        &state=Lwt50DDQKUB
+                        </code></pre>
+                        <p>6.Trigger request to client</p>
+                        <pre><code class="http" data-trim>
+                            GET /callback?code=8V1pr0rJ
+                                &state=Lwt50DDQKUB HTTP/1.1
+                            Host: localhost:9000
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Authorization Code Grant</h2>
+                        <p>7.Post request to Authorization Server</p>
+                        <pre><code class="http" data-trim>
+                            POST /oauth/token
+                            Host: localhost:9999
+                            Content-type: application/x-www-form-encoded
+                            Authorization: Basic b2F1dGgtY2xpZW50LTE6b2F1dGgtY2xpZW
+
+                            grant_type=authorization_code
+                            &redirect_uri=http%3A%2F%2Flocalhost%3A9000%&code=8V1pr0rJ
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Authorization Code Grant</h2>
+                        <p>8.Token response from Authorization Server</p>
+                        <pre><code class="http" data-trim>
+                            HTTP 200 OK
+                            Date: Fri, 26 May 2017 21:19:03 GMT
+                            Content-type: application/json
+                            {
+                                 “access_token”: “987tghjkiu6trfghjuytrghj”,
+                                 “token_type”: “Bearer”
+                            }
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Authorization Code Grant</h2>
+                        <p>9.Use token with Resource Server</p>
+                        <pre><code class="http" data-trim>
+                            GET /resource HTTP/1.1
+                            Host: localhost:9091
+                            Accept: application/json
+                            Authorization: Bearer 987tghjkiu6trfghjuytrghj
+                        </code></pre>
                     </section>
                     <section>
                         <h2>Implicit Grant</h2>
@@ -580,6 +731,15 @@
                         <p class="fragment">Support for OAuth 1 and OAuth2</p>
                         <p class="fragment">Supports JSON Web Tokens (JWT)</p>
                     </section>
+                    <section data-background="images/tweetable_oauth.png" data-background-size="80%">
+                    </section>
+                    <section>
+                        <img src="images/oauth_spring_roles.png" class="plain">
+                        <br>
+                        <small>
+                            <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-security-oauth2">http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-security-oauth2</a>
+                        </small>
+                    </section>
                     <section>
                         <h3>OAuth 2 / OpenId Connect Resource</h3>
                         <pre><code class="java" data-trim>
@@ -596,8 +756,7 @@
                                     @Override
                                     public void configure(
                                         JwtAccessTokenConverter converter) {...}
-                                }
-                            }
+                                }}
                         </code></pre>
                         <small>
                             <a href="https://tools.ietf.org/html/rfc6819">OAuth 2.0 Threat Model and Security Considerations</a>
@@ -740,6 +899,15 @@
                         <p><small><a href="https://github.com/OWASP/Top10">https://github.com/OWASP/Top10</a></small></p>
                     </section>
                     <section>
+                        <h2>Application Properties</h2>
+                        <h4>Database access credentials</h4>
+                        <pre><code class="properties" data-trim>
+                            spring.datasource.url=jdbc:postgresql://localhost/test
+                            spring.datasource.username=root
+                            spring.datasource.password=mysupersecretpassword
+                        </code></pre>
+                    </section>
+                    <section>
                         <h2>Spring Cloud Config</h2>
                         <small><a href="https://cloud.spring.io/spring-cloud-config">
                             https://cloud.spring.io/spring-cloud-config</a></small>
@@ -848,9 +1016,9 @@
                 slideNumber: 'c/t',
                 previewLinks: true,
 
-                allottedTime: 45 * 60 * 1000, // 45 minutes
+                allottedTime: 120 * 60 * 1000, // 120 minutes
 
-                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                transition: 'none', // none/fade/slide/convex/concave/zoom
 				dependencies: [
                     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
                     { src: 'plugin/markdown/marked.js' },
