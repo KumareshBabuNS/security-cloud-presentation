@@ -51,8 +51,6 @@
                     </section>
                     <section data-background="images/ashley_madison.png" data-background-size="90%">
                     </section>
-                    <section data-background="images/dildo_camera.png" data-background-size="90%">
-                    </section>
                     <section data-background="images/tv_hack.png" data-background-size="58%">
                     </section>
                     <section data-background="images/kill_jeep.png" data-background-size="50%">
@@ -66,11 +64,20 @@
                         <h2><a style="color: black" href="https://haveibeenpwned.com">https://haveibeenpwned.com</a></h2>
                     </section>
                     <section>
+                        <h3>Vulnerablities and Exploits</h3>
+                        <p>
+                            <small>
+                            <a href="https://www.cvedetails.com/">https://www.cvedetails.com</a><br>
+                            <a href="https://www.exploit-db.com/">https://www.exploit-db.com</a>
+                            </small>
+                        </p>
+                        <img src="images/vulnerabilities.png" width="80%" class="plain">
+                    </section>
+                    <section>
                         <h2>WannaCry (WannaCrypt)</h2>
                         <img src="images/wannacrypt.jpg" width="75%" class="plain">
                     </section>
                     <section data-background="images/rot13_encryption.png" data-background-size="98%">
-                        <h2>stackoverflow.com</h2>
                     </section>
                     <section tagcloud>
                         SQLInjection
@@ -281,11 +288,21 @@
                         <small><a href="https://angular.io/docs/ts/latest">
                             https://angular.io/docs/ts/latest</a></small>
                     </section>
-                    <section data-background="images/demo.jpg" data-background-size="100%">
-                        <h1>Demo</h1>
+                    <section>
+                        <h2>What about Thymeleaf?</h2>
+                        <pre><code class="html" data-trim>
+                            <!-- Safe escaped output-->
+                            <p
+                               th:text="#{home.welcome}">Welcome to our grocery store!
+                            </p>
+
+                            <!-- Unsafe unescaped output-->
+                            <p
+                               th:utext="#{home.welcome}">Welcome to our grocery store!
+                            </p>
+                        </code></pre>
                     </section>
                 </section>
-
 
                 <!-- Backend -->
 
@@ -813,10 +830,7 @@
                                 public void verifyFindAllUsersUnauthorized() {...}
 
                             }
-					</code></pre>
-                    </section>
-                    <section data-background="images/demo.jpg" data-background-size="100%">
-                        <h1>Demo</h1>
+					    </code></pre>
                     </section>
                     <section>
                         <h3>A1: Injection</h3>
@@ -855,6 +869,9 @@
                     <section>
                         <h4>A8: Cross-Site Request Forgery (CSRF)</h4>
                         <img src="images/owasp_top_10_2017.png" class="plain" width="40%" height="40%">
+                    </section>
+                    <section data-background="images/csrf.png" data-background-size="90%">
+
                     </section>
                     <section>
                         <h2>Double Submit CSRF Token</h2>
@@ -992,13 +1009,21 @@
                         All used logos are trademarks of respective companies
                     </small>
                 </section>
+                <section>
+                    <h1>Exercise: OAuth2 Security</h1>
+                    <p>
+                        <a href="https://andifalk.github.io/cloud-security-workshop/docs/html5/oauth2-tutorial.html">Exercise Tutorial</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/andifalk/cloud-security-workshop">https://github.com/andifalk/cloud-security-workshop</a>
+                    </p>
+                </section>
                 <section data-background="images/key.jpg">
                     <h1>Q&A</h1>
                     <p>http://www.novatec-gmbh.de</br>
                     http://blog.novatec-gmbh.de</p>
                     <p>andreas.falk@novatec-gmbh.de</p>
                     <p>@NT_AQE, @andifalk</p>
-
                 </section>
 			</div>
 		</div>
